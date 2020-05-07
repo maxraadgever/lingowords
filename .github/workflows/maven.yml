@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - uses: krukmat/setup-pmd@v0.4
       - name: run-pmd
         run: pmd -d $GITHUB_WORKSPACE/force-app/main/default/classes/ -R category/apex/design.xml -l apex -f text
