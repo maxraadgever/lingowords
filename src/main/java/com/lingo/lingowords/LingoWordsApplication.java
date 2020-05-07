@@ -1,5 +1,6 @@
 package com.lingo.lingowords;
 
+import com.lingo.lingowords.domain.Word;
 import com.lingo.lingowords.processor.WordProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,7 @@ public class LingoWordsApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
+
         LOG.info("EXECUTING");
         wordProcessor.fromImporterToExporter();
     }
