@@ -10,6 +10,15 @@ on:
     branches: [ master ]
 
 jobs:
+  pmd:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: sfdx-actions/setup-pmd@v1
+      - name: run-pmd
+        run: pmd -d ./force-app/main/default/classes -R category/apex/design.xml -f text
+
   build:
 
     runs-on: ubuntu-latest
@@ -20,7 +29,5 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: PMD Source Code Analyzer
-      uses: sfdx-actions/setup-pmd@v1 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
