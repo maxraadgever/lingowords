@@ -1,18 +1,14 @@
 package com.lingo.lingowords.domain;
 
-import net.bytebuddy.implementation.bind.annotation.Default;
-import org.hibernate.annotations.ColumnDefault;
-
 import javax.persistence.*;
 
 @Entity
 public class Word {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
     @Column(unique = true)
     private String word;
+
     private int length;
     private String language = "NL";
 
@@ -53,7 +49,9 @@ public class Word {
     public boolean isValid() {
         if(!this.word.matches("[a-z]+\\.?")) {
             return false;
-        } else if (this.length < 5 || this.length > 7) {
+        }
+
+        if (this.length < 5 || this.length > 7) {
             return false;
         }
 

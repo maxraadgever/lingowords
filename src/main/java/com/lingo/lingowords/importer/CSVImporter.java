@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.lingo.lingowords.domain.Word;
-import org.springframework.core.io.ClassPathResource;
 
 import java.io.File;
 import java.util.Collections;
@@ -20,12 +19,10 @@ public class CSVImporter implements WordImporter {
 
     @Override
     public List<Word> getWords() {
-        List<Word> wordList = this.loadObjectList(Word.class, this.fileLocation);
-
-        return wordList;
+        return this.loadObjectList(Word.class, this.fileLocation);
     }
 
-    private <Word> List<Word> loadObjectList(Class<Word> type, String fileName) {
+    private List<Word> loadObjectList(Class<Word> type, String fileName) {
         try {
             CsvSchema bootstrapSchema = CsvSchema.emptySchema().withHeader();
             CsvMapper mapper = new CsvMapper();

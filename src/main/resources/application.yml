@@ -3,9 +3,9 @@ spring:
     web-application-type: NONE
 
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/lingo
-    username: root
-    password: root
+    url: jdbc:postgresql://localhost:5432/lingogame
+    username: postgres
+    password: password
 
   jpa:
     properties:

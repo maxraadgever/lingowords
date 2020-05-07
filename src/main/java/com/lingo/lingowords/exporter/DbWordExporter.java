@@ -1,12 +1,10 @@
 package com.lingo.lingowords.exporter;
 
-import com.lingo.lingowords.LingoWordsApplication;
 import com.lingo.lingowords.domain.Word;
 import com.lingo.lingowords.repository.WordRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -26,7 +24,8 @@ public class DbWordExporter implements WordExporter {
             try {
                 wordRepository.save(word);
             } catch (Exception e) {
-                //
+                LOG.error("Failed to save word: " + word);
+                LOG.error(e.getMessage());
             }
         });
     }
