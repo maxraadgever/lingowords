@@ -10,16 +10,6 @@ on:
     branches: [ master ]
 
 jobs:
-  pmd:
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - uses: krukmat/setup-pmd@v0.4
-      - name: run-pmd
-        run: pmd -d $GITHUB_WORKSPACE/force-app/main/default/classes/ -R category/apex/design.xml -l apex -f text
 
   build:
 
@@ -31,5 +21,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Run PMD
+      run: mvn pmd:check
     - name: Build with Maven
       run: mvn -B package --file pom.xml
