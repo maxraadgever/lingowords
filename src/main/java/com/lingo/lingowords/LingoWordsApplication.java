@@ -1,6 +1,5 @@
 package com.lingo.lingowords;
 
-import com.lingo.lingowords.domain.Word;
 import com.lingo.lingowords.processor.WordProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
