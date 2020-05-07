@@ -10,14 +10,6 @@ on:
     branches: [ master ]
 
 jobs:
-  pmd:
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: sfdx-actions/setup-pmd@v1
-      - name: run-pmd
-        run: pmd -d ./force-app/main/default/classes -R category/apex/design.xml -f text
 
   build:
 
@@ -29,5 +21,7 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Run PMD
+      run: mvn pmd:check
     - name: Build with Maven
       run: mvn -B package --file pom.xml
