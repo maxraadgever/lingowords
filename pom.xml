@@ -91,6 +91,11 @@
                             <goal>check</goal>
                         </goals>
                         <configuration>
+                            <excludes>
+                                <exclude>**/config/*</exclude>
+                                <exclude>**/LingoWordsApplication*</exclude>
+                                <exclude>**/Mock*</exclude>
+                            </excludes>
                             <rules>
                                 <rule>
                                     <element>CLASS</element>

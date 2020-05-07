@@ -1,8 +1,8 @@
 package com.lingo.lingowords.importer;
 
 import com.lingo.lingowords.domain.Word;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.context.annotation.Import;
 
 import java.io.File;
 import java.util.List;
@@ -10,6 +10,15 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CSVImporterTest {
+
+    @Test
+    @DisplayName("Return empty list when failing")
+    void getWordsWithoutList() {
+        WordImporter importer = new CSVImporter("notexisting");
+        List<Word> words = importer.getWords();
+
+        assertEquals(0, words.size());
+    }
 
     @Test
     void getWords() {
