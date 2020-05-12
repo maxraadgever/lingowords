@@ -11,7 +11,7 @@ Lingo Words app for VKBEP
 
 ## Usage:
 
-java -jar <JAR> --file=<filename.csv> --output=<output type>
+java -jar <JAR> --file=<filename.csv> --output=< exporter>
   
   
 ## Pipeline:
