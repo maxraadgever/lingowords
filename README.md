@@ -1,14 +1,21 @@
 # lingowords
 Lingo Words app for VKBEP
 
-Importers: 
+## Importers: 
 - File (CSV)
 
 
-Exporters:
+## Exporters:
 - Database
 
 
-Usage:
+## Usage:
 
 java -jar <JAR> --file=<filename.csv> --output=<output type>
+  
+  
+## Pipeline:
+
+The pipeline uses PMD and Jacoco to check the pushes and pull requests to master.
+
+
