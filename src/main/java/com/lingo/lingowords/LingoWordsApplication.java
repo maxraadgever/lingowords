@@ -23,7 +23,6 @@ public class LingoWordsApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-
         LOG.info("EXECUTING");
         wordProcessor.fromImporterToExporter();
     }
