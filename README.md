@@ -7,6 +7,7 @@ Lingo Words app for VKBEP
 
 ## Exporters:
 - Database
+- Api
 
 
 ## Usage:
