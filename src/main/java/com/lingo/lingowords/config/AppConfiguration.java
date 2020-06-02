@@ -13,6 +13,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 @Configuration
 public class AppConfiguration {
@@ -45,6 +46,6 @@ public class AppConfiguration {
             }
         }
 
-        return new DbWordExporter(wordRepository);
+        throw new NotImplementedException();
     }
 }
