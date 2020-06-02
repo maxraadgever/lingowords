@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
+@Deprecated
 public class DbWordExporter implements WordExporter {
     private WordRepository wordRepository;
     private static Logger LOG = LoggerFactory
